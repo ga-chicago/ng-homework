@@ -1,0 +1,26 @@
+<div>
+<h2>Add new restaurant</h2>
+  <input [(ngModel)]="newRestaurant.name" placeholder="name"/>
+  <input [(ngModel)]="newRestaurant.address" placeholder="address"/>
+  <input [(ngModel)]="newRestaurant.cuisine_type" placeholder="cuisine type"/>
+  <input [(ngModel)]="newRestaurant.company" placeholder="company"/>
+  <button (click)="postRestaurant()">Submit</button>
+
+<h2>Edit current restaurant</h2>
+  <input [(ngModel)]="currentRestaurant.name" placeholder="name"/>
+  <input [(ngModel)]="currentRestaurant.address" placeholder="address"/>
+  <input [(ngModel)]="currentRestaurant.cuisine_type" placeholder="cuisine type"/>
+  <input [(ngModel)]="currentRestaurant.company" placeholder="company"/>
+  <button (click)="patchRestaurant()">Submit</button>
+
+  <ul>
+    <li *ngFor="let restaurant of restaurants">
+      <button (click)="editRestaurant()">Edit</button>
+      <button (click)="destroyRestaurant()">Destroy</button>
+    </li>
+    <li id="test">
+      <button (click)="editRestaurant()">Edit</button>
+      <button (click)="destroyRestaurant()">Destroy</button>
+    </li>
+  </ul>
+</div>
