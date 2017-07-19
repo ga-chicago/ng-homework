@@ -20,7 +20,7 @@ export class AppComponent {
   currentCharacter: Character = new Character();
 
   characters: Character[] = [];
-  baseApiUrl: string = 'http://localhost:9393/characters/1';
+  baseApiUrl: string = 'http://localhost:9393/characters/';
 
   constructor(private http: Http){
   	this.getCharacters();
@@ -32,6 +32,12 @@ export class AppComponent {
   		)
   }
 
+  postCharacter(){
+  	this.http.post(this.baseApiUrl, this.newCharacter).subscribe(response =>
+  		
+  		this.characters.push(response.json())
+  		)
+  }
 
   onSubmit(){
   	console.log();
