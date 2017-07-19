@@ -3,14 +3,25 @@
 <h1>Game Of Thrones</h1>
 
 <div style="text-align:center">
-  <input [(ngModel)]="house.name" placeholder="name">
-  <input [(ngModel)]="house.location" placeholder="location">
-  <input [(ngModel)]="house.sigil" placeholder="sigil">
-  <input [(ngModel)]="house.words" placeholder="words">
-  <button (click)="onSubmit()">Submit</button>
+  <h2>Post Form</h2>
+  <input [(ngModel)]="newCharacter.first_name" placeholder="first name"/>
+  <input [(ngModel)]="newCharacter.last_name" placeholder="last name"/>
+  <input [(ngModel)]="newCharacter.house" placeholder="house"/>
+  <input [(ngModel)]="newCharacter.dead" placeholder="dead? true or false"/>
+  <button (click)="postCharacter()">Submit</button>
+  <h2>Post Form</h2>
+  <input [(ngModel)]="newCharacter.first_name" placeholder="first name"/>
+  <input [(ngModel)]="newCharacter.last_name" placeholder="last name"/>
+  <input [(ngModel)]="newCharacter.house" placeholder="house"/>
+  <input [(ngModel)]="newCharacter.dead" placeholder="dead? true or false"/>
+  <button (click)="patchCharacter()">Submit</button>
 
-  <h3>House: {{house.name}}</h3>
-  <h3>Location: {{house.location}}</h3>
-  <h3>Sigil: {{house.sigil}}</h3>
-  <h3>Words: {{house.words}}</h3>
+
+	<ul>
+		<li *ngFor="let character of characters">
+			{{character.last_name}} {{character.first_name}} {{character.house}} {{character.dead}}
+			<button (click)="editCharacter(character)">Edit</button>
+		    <button (click)="killCharacter(character)">Kill</button>
+		</li>
+	</ul>
 </div>
