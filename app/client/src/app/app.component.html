@@ -15,9 +15,12 @@
 
   <ul>
     <li *ngFor="let restaurant of restaurants">
-    </li>
-    <li>
       <button (click)="editRestaurant()">Edit</button>
+      <button (click)="destroyRestaurant()">Destroy</button>
+    </li>
+    <li id="test">
+      <button (click)="editRestaurant()">Edit</button>
+      <button (click)="destroyRestaurant()">Destroy</button>
     </li>
   </ul>
 </div>
