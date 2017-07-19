@@ -51,13 +51,9 @@ export class AppComponent {
   }
 
   killCharacter(character){
-  	this.http.delete(this.baseApiUrl + character.id).subscribe(response =>
+  	this.http.delete(this.baseApiUrl + character.id).subscribe(response =>//response we get from the server
   		this.characters = response.json()	
   		)
-  }
-
-  onSubmit(){
-  	console.log();
   }
 
 }

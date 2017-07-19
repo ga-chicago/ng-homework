@@ -43,7 +43,7 @@ class CharacterController < Sinatra::Base
 	    request_body = JSON.parse(request.body.read)
 	    character.update_attributes(request_body)
 	    character.save
-	    characters = Character.all.sort_by {|character| character.id} 
+	    characters = Character.all.sort_by {|character| character.id}
 	    characters.to_json
 	    
 	end
