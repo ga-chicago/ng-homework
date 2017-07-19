@@ -10,16 +10,16 @@
   <input [(ngModel)]="newCharacter.dead" placeholder="dead? true or false"/>
   <button (click)="postCharacter()">Submit</button>
   <h2>Patch Form</h2>
-  <input [(ngModel)]="newCharacter.first_name" placeholder="first name"/>
-  <input [(ngModel)]="newCharacter.last_name" placeholder="last name"/>
-  <input [(ngModel)]="newCharacter.house" placeholder="house"/>
-  <input [(ngModel)]="newCharacter.dead" placeholder="dead? true or false"/>
+  <input [(ngModel)]="currentCharacter.first_name" placeholder="first name"/>
+  <input [(ngModel)]="currentCharacter.last_name" placeholder="last name"/>
+  <input [(ngModel)]="currentCharacter.house" placeholder="house"/>
+  <input [(ngModel)]="currentCharacter.dead" placeholder="dead? true or false"/>
   <button (click)="patchCharacter()">Submit</button>
 
 
 	<ul>
 		<li *ngFor="let character of characters">
-			{{character.last_name}} {{character.first_name}} {{character.house}} {{character.dead}}
+			{{character.first_name}} {{character.last_name}} {{character.house}} {{character.dead}}
 			<button (click)="editCharacter(character)">Edit</button>
 		    <button (click)="killCharacter(character)">Kill</button>
 		</li>

@@ -39,6 +39,23 @@ export class AppComponent {
   		)
   }
 
+  patchCharacter(){
+  	this.http.patch(this.baseApiUrl + this.currentCharacter.id, this.currentCharacter).subscribe(response => 
+
+  		this.characters = response.json()
+  		)
+  }
+
+  editCharacter(character){
+  	this.currentCharacter = character;
+  }
+
+  killCharacter(character){
+  	this.http.delete(this.baseApiUrl + character.id).subscribe(response =>
+  		this.characters = response.json()	
+  		)
+  }
+
   onSubmit(){
   	console.log();
   }
