@@ -1,1 +1,5 @@
-app.rb
+require 'bundler'
+Bundler.require
+
+
+
