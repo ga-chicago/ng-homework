@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<h1>Game Of Thrones</h1>
+
+<div style="text-align:center">
+  <input [(ngModel)]="house.name" placeholder="name">
+  <input [(ngModel)]="house.location" placeholder="location">
+  <input [(ngModel)]="house.sigil" placeholder="sigil">
+  <input [(ngModel)]="house.words" placeholder="words">
+  <button (click)="onSubmit()">Submit</button>
+
+  <h3>House: {{house.name}}</h3>
+  <h3>Location: {{house.location}}</h3>
+  <h3>Sigil: {{house.sigil}}</h3>
+  <h3>Words: {{house.words}}</h3>
+</div>
