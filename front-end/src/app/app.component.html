@@ -1,0 +1,20 @@
+<div>
+<h2>Post</h2>
+  <input [(ngModel)]="newPerson.first_name" placeholder="first name">
+  <input [(ngModel)]="newPerson.last_name" placeholder="last name">
+  <input [(ngModel)]="newPerson.room_number" placeholder="room number">
+  <input [(ngModel)]="newPerson.favorite_food" placeholder="favorite food">
+  <button type="submit" (click)="postPerson()">Send!</button>
+
+<h2>Patch</h2>
+  <input [(ngModel)]="editPerson.first_name" placeholder="first name">
+  <input [(ngModel)]="editPerson.last_name" placeholder="last name">
+  <input [(ngModel)]="editPerson.room_number" placeholder="room number">
+  <input [(ngModel)]="editPerson.favorite_food" placeholder="favorite food">
+  <button type="submit" (click)="patchPerson()">Send!</button>
+
+  <ul>
+    <li *ngFor="let person of people">{{person.id}} {{person.first_name}} {{person.last_name}} {{person.room_number}} {{person.favorite_food}} <button (click)="selectPerson(person)">Edit</button> <button (click)="deletePerson(person)">Delete</button></li>
+  </ul>
+
+</div>
