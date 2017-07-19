@@ -1,0 +1,32 @@
+<div>
+  
+  <input [(ngModel)]="newShow.name" placeholder="name">
+  <input [(ngModel)]="newShow.genre" placeholder="genre">
+  <input [(ngModel)]="newShow.stage" placeholder="stage">
+  <input [(ngModel)]="newShow.set_time" placeholder="time">
+
+  <button (click)="postSet()">Submit</button>
+
+  <br>
+  <br>
+
+   <input [(ngModel)]="currentSet.name" placeholder="name">
+  <input [(ngModel)]="currentSet.genre" placeholder="genre">
+  <input [(ngModel)]="currentSet.stage" placeholder="stage">
+  <input [(ngModel)]="currentSet.set_time" placeholder="time">
+
+  <button (click)="patchSet()">Submit</button>
+
+
+  <ul>
+    
+    <li *ngFor="let show of shows">
+      
+         {{show.id}} {{show.name}} {{show.genre}} {{show.stage}} {{show.set_time}}
+          <button (click)="editSet(show)">Edit</button>
+           <button (click)="deleteSet(show)">Delete</button>
+    </li>
+  </ul>
+
+
+</div>
