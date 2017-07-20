@@ -1,0 +1,28 @@
+<h1>Doggos</h1>
+<div>
+  <h3>Post Form</h3>
+  <input [(ngModel)]="newDoggo.name" placeholder="Name">
+  <input [(ngModel)]="newDoggo.breed" placeholder="Breed">
+  <input [(ngModel)]="newDoggo.age" placeholder="Age">
+  <input [(ngModel)]="newDoggo.owner" placeholder="Owner">
+  <button (click)="postDoggo()">Submit</button>
+</div>
+<div>
+  <h3>Edit Form</h3>
+  <input [(ngModel)]="currentDoggo.name" placeholder="Name">
+  <input [(ngModel)]="currentDoggo.breed" placeholder="Breed">
+  <input [(ngModel)]="currentDoggo.age" placeholder="Age">
+  <input [(ngModel)]="currentDoggo.owner" placeholder="Owner">
+  <button (click)="patchDoggo()">Submit</button>
+</div>
+
+<div *ngFor="let doggo of doggos">
+  <h2>{{doggo.name}}</h2>
+  <ul>
+    <li>Breed: {{doggo.breed}}</li>
+    <li>Age: {{doggo.age}}</li>
+    <li>Owner: {{doggo.owner}}</li>
+  </ul>
+  <button (click)='editDoggo(doggo)'>edit</button>
+  <button (click)='deleteDoggo(doggo)' >delete</button>
+</div>
