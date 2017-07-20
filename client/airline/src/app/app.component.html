@@ -1,0 +1,43 @@
+<div>
+  <h2>Flight Post Form</h2>
+  <input [(ngModel)]="newFlight.origin" placeholder="From"/>
+  <input [(ngModel)]="newFlight.destination" placeholder="To"/>
+  <input [(ngModel)]="newFlight.dep_date" placeholder="Departure Date"/>
+  <input [(ngModel)]="newFlight.arr_date" placeholder="Arrival Date"/>
+  <button (click)="postFlight()">Submit</button>
+  <h2>Flight Patch Form</h2>
+  <input [(ngModel)]="currentFlight.origin" placeholder="From"/>
+  <input [(ngModel)]="currentFlight.destination" placeholder="To"/>
+  <input [(ngModel)]="currentFlight.dep_date" placeholder="Departure Date"/>
+  <input [(ngModel)]="currentFlight.arr_date" placeholder="Arrival Date"/>
+  <button (click)="patchFlight()">Submit</button>
+  <ul>
+    <li *ngFor="let flight of flights">
+      {{flight.id}} {{flight.origin}} {{flight.destination}} {{flight.dep_date}} {{flight.arr_date}}
+      <button (click)="editFlight(flight)">Edit</button>
+      <button (click)="removeFlight(flight)">Delete</button>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <h2>Passenger Post Form</h2>
+  <input [(ngModel)]="newPassenger.first_name" placeholder="First Name"/>
+  <input [(ngModel)]="newPassenger.last_name" placeholder="Last Name"/>
+  <input [(ngModel)]="newPassenger.email" placeholder="Email"/>
+  <button (click)="postPassenger()">Submit</button>
+  <h2>Passenger Patch Form</h2>
+  <input [(ngModel)]="currentPassenger.first_name" placeholder="First Name"/>
+  <input [(ngModel)]="currentPassenger.last_name" placeholder="Last Name"/>
+  <input [(ngModel)]="currentPassenger.email" placeholder="Email"/>
+  <button (click)="patchPassenger()">Submit</button>
+  <ul>
+    <li *ngFor="let passenger of passengers">
+      {{passenger.id}} {{passenger.first_name}} {{passenger.last_name}} {{passenger.email}}
+      <button (click)="editPassenger(passenger)">Edit</button>
+      <button (click)="removePassenger(passenger)">Delete</button>
+    </li>
+  </ul>
+</div>
+
+
