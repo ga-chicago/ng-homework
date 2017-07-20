@@ -1,0 +1,7 @@
+source 'https://rubygems.com'
+
+gem 'sinatra'
+gem 'pg'
+gem 'json'
+gem 'sinatra-activerecord'
+gem 'bcrypt'
